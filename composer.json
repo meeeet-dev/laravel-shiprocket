@@ -1,0 +1,54 @@
+{
+    "name": "meeeet-dev/laravel-shiprocket",
+    "description": "Shiprocket API (V1) Laravel SDK. Integration of Shiprocket API in your laravel application is easy, This package enables you to utilize most of your Shiprocket functions.",
+    "keywords": [
+        "meeeet dev",
+        "laravel Shiprcoket Api",
+        "Laravel Shiprocket Wrapper",
+        "Shiprocket SDK Module"
+    ],
+    "homepage": "https://github.com/meeeet-dev/laravel-shiprocket",
+    "license": "MIT",
+    "authors": [{
+        "name": "Meeeet Dev",
+        "email": "meeeet.dev@gmail.com",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "MeeeetDev\\Shiprocket\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MeeeetDev\\Shiprocket\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MeeeetDev\\Shiprocket\\ShiprocketServiceProvider"
+            ],
+            "aliases": {
+                "Shiprocket": "MeeeetDev\\Shiprocket\\Shiprocket"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
