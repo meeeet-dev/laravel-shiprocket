@@ -10,6 +10,7 @@ use MeeeetDev\Shiprocket\Resources\NdrResource;
 use MeeeetDev\Shiprocket\Resources\OrderResource;
 use MeeeetDev\Shiprocket\Resources\PickupResource;
 use MeeeetDev\Shiprocket\Resources\ProductResource;
+use MeeeetDev\Shiprocket\Resources\ReturnResource;
 use MeeeetDev\Shiprocket\Resources\ShipmentResource;
 use MeeeetDev\Shiprocket\Resources\TrackingResource;
 use MeeeetDev\Shiprocket\Resources\WarehouseResource;
@@ -58,6 +59,17 @@ class ShiprocketApi
     public function order(string $token)
     {
         return new OrderResource($this->client, $token);
+    }
+
+    /**
+     * Return order related wrapper class
+     *
+     * @param string $token
+     * @return mixed
+     */
+    public function return(string $token)
+    {
+        return new ReturnResource($this->client, $token);
     }
 
     /**
