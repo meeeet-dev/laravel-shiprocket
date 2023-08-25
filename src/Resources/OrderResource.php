@@ -76,6 +76,19 @@ class OrderResource extends Resource
             $endpoint = $endpoint . '?' .  http_build_query($param);
         }
 
-        return $this->getRequest($endpoint, $param);
+        return $this->getRequest($endpoint);
+    }
+
+    /**
+     * Get the details of a specific Order
+     *
+     * @param string $orderId
+     * @return mixed
+     */
+    public function getSpecific(string $orderId)
+    {
+        $endpoint = 'orders/show/' . $orderId;
+
+        return $this->getRequest($endpoint);
     }
 }
