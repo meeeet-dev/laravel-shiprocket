@@ -37,6 +37,19 @@ class OrderResource extends Resource
     }
 
     /**
+     * Update specific order
+     *
+     * @param array $order
+     * @return mixed
+     */
+    public function update(array $order)
+    {
+        $endpoint = 'orders/update/adhoc';
+
+        return $this->postRequest($endpoint, $order);
+    }
+
+    /**
      * Cancel an Order
      *
      * @param array $ids
